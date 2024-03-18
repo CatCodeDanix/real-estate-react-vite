@@ -1,0 +1,31 @@
+@import url("/public/styles/leaflet.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+    url("/src/fonts/Vazirmatn.woff2") format("woff2"),
+    url("/src/fonts/Vazirmatn.ttf") format("truetype");
+  font-weight: 1 900;
+  font-style: normal;
+}
+
+:root {
+  font-family: "Vazirmatn", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --map-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg)
+    saturate(0.3) brightness(0.7);
+  font-feature-settings: "ss01";
+}
+
+@media (prefers-color-scheme: dark) {
+  .map-tiles {
+    filter: var(--map-tiles-filter, none);
+  }
+}
