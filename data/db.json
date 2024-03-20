@@ -13,6 +13,20 @@
       "firstName": "احمد",
       "lastName": "احمدی",
       "id": 2
+    },
+    {
+      "email": "test@test.con",
+      "password": "$2a$10$FgLUIQZGI3D95x8xZx4nB.zinGRyKtQPSMIBA.xxRkEsKKZHjPOoe",
+      "firstName": "تست",
+      "lastName": "تستی",
+      "id": 3
+    },
+    {
+      "email": "test2@gmail.com",
+      "password": "$2a$10$sI03lDhNgVYVO5K1fJKGLeUIlJNEORSqPL2drEmbk3o/7pzbCguDO",
+      "firstName": "تست 2",
+      "lastName": "تست 2",
+      "id": 4
     }
   ],
   "posts": [
@@ -141,7 +155,7 @@
       "phone": "09876543210",
       "address": "تهران - خیابان شهید بهشتی - خیابان کوچه پنجم - پلاک 4",
       "description": "تک خوابه - با پارکینگ",
-      "userId": 1,
+      "userId": 2,
       "position": {
         "lat": 35.64654321098765,
         "lng": 51.33432109876543
@@ -152,7 +166,7 @@
       "phone": "09765432109",
       "address": "تهران - خیابان فاطمی - خیابان کوچه ششم - پلاک 9",
       "description": "سه خوابه - با انباری",
-      "userId": 1,
+      "userId": 2,
       "position": {
         "lat": 35.63987654321098,
         "lng": 51.32765432109876

@@ -1,8 +1,10 @@
 import { Button, Link, Pagination } from "@nextui-org/react";
-import PostItem from "../components/PostItem";
-import { useAuth } from "../contexts/AuthContext";
-import { usePosts } from "../contexts/PostsContext";
 import { Navigate, useSearchParams } from "react-router-dom";
+
+import { usePosts } from "../contexts/PostsContext";
+import { useAuth } from "../contexts/AuthContext";
+
+import PostItem from "../components/PostItem";
 import { type Post } from "../components/AddPostForm";
 
 const Posts = ({ userOnlyPosts }: { userOnlyPosts?: boolean }) => {

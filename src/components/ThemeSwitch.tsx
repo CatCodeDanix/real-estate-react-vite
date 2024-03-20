@@ -7,7 +7,6 @@ const ThemeSwitch = () => {
   const { theme, setTheme } = useTheme();
 
   function handleSelectChange(status: boolean) {
-    console.log(status);
     const theme = status ? "dark" : "light";
     setTheme(theme);
   }

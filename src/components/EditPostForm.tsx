@@ -1,11 +1,13 @@
 import { useRef } from "react";
-import CustomInput from "./CustomInput";
-import Form, { type FormHandle } from "./Form";
-import { Textarea, Button, ButtonGroup } from "@nextui-org/react";
 import { useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Textarea, Button, ButtonGroup } from "@nextui-org/react";
+
 import { usePosts } from "../contexts/PostsContext";
 import { useTheme } from "../contexts/ThemeContext";
+
+import CustomInput from "./CustomInput";
 import Map from "./Map";
+import Form, { type FormHandle } from "./Form";
 import { type FormData, type Post } from "./AddPostForm";
 
 interface EditPostFormProps {
@@ -20,9 +22,6 @@ const EditPostForm = ({ onClose }: EditPostFormProps) => {
   const { posts, editPost } = usePosts();
   const { theme } = useTheme();
   const navigate = useNavigate();
-
-  console.log("poooosts is:   ");
-  console.log(posts);
 
   const post: Post = posts.find((post) => post.id == params.id)!;
 
@@ -41,11 +40,10 @@ const EditPostForm = ({ onClose }: EditPostFormProps) => {
 
     editPost(newPostData)
       .then(() => {
-        console.log("Post was edited successfuly!");
         navigate(-1);
       })
       .catch(() => {
-        console.log("Something went wrong with editing the post!");
+        console.error("Something went wrong with editing the post!");
       });
   }
 

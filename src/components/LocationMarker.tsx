@@ -1,8 +1,8 @@
-import { type LatLngTuple, type LatLng } from "leaflet";
 import { SetStateAction, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { type LatLngTuple, type LatLng } from "leaflet";
 import { useMapEvents } from "react-leaflet";
 import { Marker } from "react-leaflet";
-import { useNavigate } from "react-router-dom";
 
 const LocationMarker = ({ pos = null }: { pos: LatLngTuple | null }) => {
   const [position, setPosition] = useState(pos);

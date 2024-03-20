@@ -1,7 +1,8 @@
+import { useState } from "react";
 import { Input, type InputProps } from "@nextui-org/react";
+
 import { EyeFilledIcon } from "./../icons/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "./../icons/EyeSlashFilledIcon";
-import { useState } from "react";
 
 interface CustomInputParams {
   label: string;

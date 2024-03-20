@@ -1,11 +1,13 @@
 import { useRef } from "react";
-import CustomInput from "./CustomInput";
-import Form, { type FormHandle } from "./Form";
 import { Textarea, Button } from "@nextui-org/react";
 import { useNavigate, useSearchParams } from "react-router-dom";
+
 import { usePosts } from "../contexts/PostsContext";
 import { useAuth } from "../contexts/AuthContext";
 import { useTheme } from "../contexts/ThemeContext";
+
+import CustomInput from "./CustomInput";
+import Form, { type FormHandle } from "./Form";
 
 export interface FormData {
   phone: string;
@@ -36,7 +38,6 @@ const AddPostForm = () => {
     const lat = searchParams.get("lat");
     const lng = searchParams.get("lng");
     const userId = user ? user.id! : 0;
-    console.log("userId is:  ", userId);
     if (lat && lng) {
       const postData: Post = {
         ...formData,
@@ -46,7 +47,6 @@ const AddPostForm = () => {
       addPost(postData)
         .then(() => {
           navigate("/app/my-posts");
-          console.log("Post added successfully");
         })
         .catch(() => {
           console.error("Somthing went wrong with adding the post!");

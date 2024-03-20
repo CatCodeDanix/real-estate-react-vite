@@ -1,6 +1,6 @@
 /* eslint-disable tailwindcss/no-contradicting-classname */
-import PageNav from "../components/PageNav";
 import { Button, Link } from "@nextui-org/react";
+import PageNav from "../components/PageNav";
 
 const Homepage = () => {
   return (

@@ -123,7 +123,6 @@ function AuthProvider({ children }: { children: ReactNode }) {
     if (res.ok) {
       const data: AuthServerResponseData =
         (await res.json()) as AuthServerResponseData;
-      console.log("data issss:   ", data.user.id);
       dispatch({
         type: "login",
         payload: {
@@ -132,8 +131,6 @@ function AuthProvider({ children }: { children: ReactNode }) {
         },
       });
     } else {
-      const data: unknown = await res.json();
-      console.log(data);
       throw new Error("Failed to login");
     }
   }

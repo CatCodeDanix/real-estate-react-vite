@@ -1,9 +1,11 @@
 import { FormEvent, useState } from "react";
-import { Button } from "@nextui-org/react";
-import Alert from "../components/Alert";
-import { useAuth } from "../contexts/AuthContext";
-import CustomInput from "./CustomInput";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@nextui-org/react";
+
+import { useAuth } from "../contexts/AuthContext";
+
+import Alert from "./Alert";
+import CustomInput from "./CustomInput";
 
 export interface Feedback {
   type: "success" | "danger";
