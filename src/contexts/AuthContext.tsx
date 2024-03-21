@@ -10,6 +10,7 @@ interface User {
 interface AuthContextValue {
   user: User | null;
   isAuthenticated: boolean;
+  accessToken: string | null;
   signup: (userData: User) => Promise<void>;
   login: (userData: User) => Promise<void>;
   logout: () => void;
@@ -142,6 +143,7 @@ function AuthProvider({ children }: { children: ReactNode }) {
   const providerValue: AuthContextValue = {
     user,
     isAuthenticated,
+    accessToken,
     login,
     logout,
     signup,

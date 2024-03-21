@@ -13,20 +13,6 @@
       "firstName": "احمد",
       "lastName": "احمدی",
       "id": 2
-    },
-    {
-      "email": "test@test.con",
-      "password": "$2a$10$FgLUIQZGI3D95x8xZx4nB.zinGRyKtQPSMIBA.xxRkEsKKZHjPOoe",
-      "firstName": "تست",
-      "lastName": "تستی",
-      "id": 3
-    },
-    {
-      "email": "test2@gmail.com",
-      "password": "$2a$10$sI03lDhNgVYVO5K1fJKGLeUIlJNEORSqPL2drEmbk3o/7pzbCguDO",
-      "firstName": "تست 2",
-      "lastName": "تست 2",
-      "id": 4
     }
   ],
   "posts": [

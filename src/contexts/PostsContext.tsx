@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useContext, useReducer } from "react";
 import { type Post } from "../components/AddPostForm";
+import { useAuth } from "./AuthContext";
 
 interface ReducerState {
   posts: Post[] | [];
@@ -88,10 +89,16 @@ export const PostsContextProvider = ({ children }: { children: ReactNode }) => {
     initialReducerValue,
   );
 
+  const { accessToken } = useAuth();
+
   async function getPosts() {
     dispatch({ type: "loading", payload: true });
     try {
-      const res = await fetch("http://localhost:9000/posts");
+      const res = await fetch("http://localhost:9000/posts", {
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      });
       if (res.ok) {
         const data = (await res.json()) as Post[];
         dispatch({ type: "posts/get", payload: data });
@@ -112,6 +119,7 @@ export const PostsContextProvider = ({ children }: { children: ReactNode }) => {
         method: "POST",
         body: JSON.stringify(post),
         headers: {
+          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
       });
@@ -134,6 +142,7 @@ export const PostsContextProvider = ({ children }: { children: ReactNode }) => {
       const res = await fetch(`http://localhost:9000/posts/${id}`, {
         method: "DELETE",
         headers: {
+          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
       });
@@ -156,6 +165,7 @@ export const PostsContextProvider = ({ children }: { children: ReactNode }) => {
         method: "PUT",
         body: JSON.stringify(post),
         headers: {
+          Authorization: `Bearer ${accessToken}`,
           "Content-Type": "application/json",
         },
       });
